@@ -3,14 +3,18 @@
 $standard: #006992;
 $white: #f1f2f2;
 $transition: all 0.25s ease-in-out;
+$width70: 70%;
+$width40: 40%;
+$em125: 1.25em;
+$em09: 0.5em;
 
 // mixin
-@mixin mybutton($color_1, $color_2) {
-  width: 70%;
+@mixin mybutton($color_1, $color_2, $width, $em) {
+  width: $width;
   margin: 10px;
   border: 2px solid $color_1;
-  padding: 6px 24px;
-  font-size: 1.15em;
+  padding: 6px 12px;
+  font-size: $em;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: $color_1;
@@ -55,6 +59,9 @@ $transition: all 0.25s ease-in-out;
     margin-left: 5%;
     border-right: black solid 2px;
   }
+  .input {
+    margin: 3%;
+  }
   .login__inputcontainer {
     width: 55%;
     height: 100%;
@@ -62,8 +69,14 @@ $transition: all 0.25s ease-in-out;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    button {
-      @include mybutton($standard, $white);
+    .buttonStandard {
+      @include mybutton($standard, $white, $width70, $em125);
     }
+    .buttonDownsized {
+      @include mybutton($standard, $white, $width40, $em09);
+    }
+  }
+  .button__container {
+    width: 100%;
   }
 }
