@@ -19,7 +19,7 @@ export default function Input(props: IInputProps) {
         type={props.type}
         placeholder={props.placeholder}
         value={props.value}
-        onChange={(e) => props.setVal(e.target.value)}
+        onChange={(e) => props.setVal(e)}
         className={props.class}
       />
     </div>
